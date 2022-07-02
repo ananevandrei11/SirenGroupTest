@@ -1,0 +1,54 @@
+.warranty {
+	position: relative;
+
+	@media screen and (max-width: 767px) {
+		padding: 35px 0; 
+		background-color: $gray-light;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 12px;
+		bottom: 12px;
+		left: 0;
+		width: 100%;
+		background-color: $gray-light;
+		z-index: -1;
+
+		@media screen and (max-width: 767px) {
+			opacity: 0;
+		}
+	}
+
+	&__picture {
+		width: 255px;
+		height: 240px;
+
+		@media screen and (max-width: 767px) {
+			width: 170px;
+			height: 160px;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		object-fit: contain;
+		object-position: center;
+	}
+
+	&__title {
+		margin-bottom: 15px;
+		color: $black;
+	}
+
+	&__title strong {
+		font-weight: 700;
+		color: $green;
+	}
+
+	&__text {
+		margin-bottom: 0;
+		color: $black;
+	}
+}

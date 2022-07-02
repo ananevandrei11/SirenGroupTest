@@ -1,0 +1,52 @@
+.footer {
+	padding: 25px 0;
+	background-color: $green;
+
+	&__logoLink {
+		@media screen and (max-width: 991px) {
+			margin-bottom: 25px;
+		}
+	}
+
+	// &__listLink {
+	// 	margin: 0 -15px;
+
+	// 	@media screen and (max-width: 991px) {
+	// 		margin-bottom: 25px;
+	// 	}
+	// }
+
+	&__itemLink {
+		
+	}
+
+	&__link {
+		font-family: $ff-medium;
+		font-size: 14px;
+		line-height: 17px;
+		color: $white;
+		text-decoration: underline;
+
+		@media (hover: hover) {
+			&:hover {
+				opacity: .75;
+				color: $white;
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				opacity: .75;
+				color: $white;
+			}
+		}
+	}
+
+	&__copyText {
+		max-width: 121px;
+		font-family: $ff-medium;
+		font-size: 12px;
+		line-height: 18px;
+		color: $white;
+	}
+}
