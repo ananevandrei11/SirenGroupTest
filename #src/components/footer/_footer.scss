@@ -8,16 +8,20 @@
 		}
 	}
 
-	// &__listLink {
-	// 	margin: 0 -15px;
+	&__listLink {
+		margin-top: -7.5px;
+		margin-bottom: -7.5px;
+		font-size: 14px;
+		line-height: 17px;
 
-	// 	@media screen and (max-width: 991px) {
-	// 		margin-bottom: 25px;
-	// 	}
-	// }
+		@media screen and (max-width: 991px) {
+			width: 100%;
+		}
+	}
 
 	&__itemLink {
-		
+		padding-top: 7.5px;
+		padding-bottom: 7.5px;
 	}
 
 	&__link {
@@ -43,10 +47,13 @@
 	}
 
 	&__copyText {
-		max-width: 121px;
 		font-family: $ff-medium;
 		font-size: 12px;
 		line-height: 18px;
 		color: $white;
+		
+		@media screen and (max-width: 991px) {
+			margin-top: 25px;
+		}
 	}
 }

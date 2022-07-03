@@ -1,68 +1,67 @@
 .features {
-	padding: 60px 0;
-	background-color: $green-light;
+  padding: 60px 0;
+  background-color: $green-light;
 
-	@media screen and (max-width: 767px) {
-		padding: 35px 0;
-	}
+  @media screen and (max-width: 767px) {
+    padding: 35px 0;
+  }
 
-	&__card {
-		margin-bottom: 40px;
+  &__card {
+    margin-bottom: 40px;
 
-		@media screen and (max-width: 767px) {
-			margin-bottom: 30px;
-		}
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
 
-		&:last-of-type {
-			margin-bottom: 0;
-		}
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
 
-		&:nth-of-type(even) {
-			flex-direction: row-reverse;
-		}
-	}
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .featuresCard {
+  &__picture_first {
+    position: relative;
 
-	&__picture_first {
-		position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      top: -20px;
+      right: -20px;
+      width: 240px;
+      height: 86px;
+      background: url(../img/micron.png) center / contain no-repeat;
 
-		&::after {
-			position: absolute;
-			content: "";
-			top: -20px;
-			right: -20px;
-			width: 240px;
-			height: 86px;
-			background: url(../img/micron.png) center / contain no-repeat;
+      @media screen and (max-width: 767px) {
+        top: 10px;
+        right: 25.5px;
+        width: 200px;
+        height: 72px;
+      }
+    }
+  }
 
-			@media screen and (max-width: 767px) {
-				top: 10px;
-				right: 25.5px;
-				width: 200px;
-				height: 72px;
-			}
-		}
-	}
+  &__img {
+    height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
 
-	&__img {
-		height: 300px;
-		border-radius: 8px;
-		object-fit: cover;
-		object-position: center;
+    @media screen and (max-width: 767px) {
+      height: 196px;
+    }
+  }
 
-		@media screen and (max-width: 767px) {
-			height: 196px;
-		}
-	}
+  &__title {
+    margin-bottom: 15px;
+    color: $black;
+  }
 
-	&__title {
-		margin-bottom: 15px;
-		color: $black;
-	}
-
-	&__text {
-		color: $black;
-	}
+  &__text {
+    color: $black;
+  }
 }

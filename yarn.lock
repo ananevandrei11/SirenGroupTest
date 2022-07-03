@@ -3780,6 +3780,16 @@ gulp-sourcemaps@^3.0.0:
     strip-bom-string "^1.0.0"
     through2 "^2.0.0"
 
+gulp-ttf2eot@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/gulp-ttf2eot/-/gulp-ttf2eot-1.1.2.tgz#67516fe253baecbb3910b417a08dcb51e34acb0c"
+  integrity sha512-B2NwwG+QVMF6ETzeXwZHx6MeYEx0oHguIj0ZjPhqtKM3iXuDOrYbT2054q73cTI6hn2GMNAQWy11GjZM+LUxRg==
+  dependencies:
+    bufferstreams "^1.1.0"
+    gulp-util "^3.0.7"
+    readable-stream "^2.0.4"
+    ttf2eot "^2.0.0"
+
 gulp-ttf2woff2@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/gulp-ttf2woff2/-/gulp-ttf2woff2-3.0.0.tgz#0b359293e10aea9c3e381f7ca4f9cf01135470ae"
@@ -3813,7 +3823,7 @@ gulp-uglify-es@^2.0.0:
     vinyl "^2.2.0"
     vinyl-sourcemaps-apply "^0.2.1"
 
-gulp-util@^3.0.6:
+gulp-util@^3.0.6, gulp-util@^3.0.7:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   integrity sha512-q5oWPc12lwSFS9h/4VIjG+1NuNDlJ48ywV2JKItY4Ycc/n1fXJeYPVQsfu5ZrhQi7FGSDBalwUCLar/GyHXKGw==
@@ -7351,6 +7361,14 @@ trim-repeated@^1.0.0:
   integrity sha512-m6s2OdQe5wgpFMC+pAJ+q9djG82O2jcHPOI6RNg1yy9rCYR+WD6Nbpl32fDpfC56nirdRy+opFa/Vk7HYhqaew==
   dependencies:
     glob "^7.1.2"
+
+ttf2eot@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ttf2eot/-/ttf2eot-2.0.0.tgz#8e6337a585abd1608a0c84958ab483ce69f6654b"
+  integrity sha512-U56aG2Ylw7psLOmakjemAzmpqVgeadwENg9oaDjaZG5NYX4WB6+7h74bNPcc+0BXsoU5A/XWiHabDXyzFOmsxQ==
+  dependencies:
+    argparse "^1.0.6"
+    microbuffer "^1.0.0"
 
 ttf2woff2@^3.0.0:
   version "3.0.0"

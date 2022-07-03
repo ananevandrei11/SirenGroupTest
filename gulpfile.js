@@ -22,6 +22,7 @@ const imagemin = require("gulp-imagemin");
 // FONTS
 const ttf2woff = require("gulp-ttf2woff");
 const ttf2woff2 = require("gulp-ttf2woff2");
+const ttf2eot = require("gulp-ttf2eot");
 const fonter = require("gulp-fonter");
 
 //! MODE PRODUCTION START
@@ -52,40 +53,26 @@ function styleVendors() {
 }
 
 function js() {
-  return src([
-    "#src/js/**/*.js",
-    "!#src/js/vendors/**/*.js",
-    "!#src/js/three/**/*.js",
-  ]).pipe(dest("dist/js"));
+  return src(["#src/js/**/*.js", "!#src/js/vendors/**/*.js"]).pipe(
+    dest("dist/js")
+  );
 }
 
 function jsMin() {
-  return src([
-    "dev/js/**/*.js",
-    "!dev/js/vendors/**/*.js",
-    "!dev/js/three/**/*.js",
-  ])
+  return src(["dev/js/**/*.js", "!dev/js/vendors/**/*.js"])
     .pipe(sourcemaps.init())
-    .pipe(
-      babel({
-        presets: ["@babel/preset-env"],
-      })
-    )
+    .pipe(uglify())
     .pipe(
       rename(function (path) {
         path.basename += ".min";
       })
     )
-    .pipe(uglify())
+    .pipe(sourcemaps.write())
     .pipe(dest("dist/js"));
 }
 
 function jsVendors() {
   return src(["dev/js/vendors/**/*.js"]).pipe(dest("dist/js/vendors/"));
-}
-
-function jsThree() {
-  return src(["dev/js/three/**/*.js"]).pipe(dest("dist/js/three/"));
 }
 
 function images() {
@@ -107,10 +94,6 @@ function fonts() {
   return src("dev/fonts/**/*").pipe(dest("dist/fonts"));
 }
 
-function modal() {
-  return src("dev/modal/**/*").pipe(dest("dist/modal"));
-}
-
 function cleanDist() {
   return del("dist/**/*");
 }
@@ -121,11 +104,9 @@ exports.styleMin = styleMin;
 exports.styleVendors = styleVendors;
 exports.js = js;
 exports.jsMin = jsMin;
-exports.jsThree = jsThree;
 exports.jsVendors = jsVendors;
 exports.images = images;
 exports.fonts = fonts;
-exports.modal = modal;
 exports.cleanDist = cleanDist;
 exports.build = series(
   cleanDist,
@@ -137,8 +118,7 @@ exports.build = series(
   jsMin,
   jsVendors,
   images,
-  fonts,
-  modal
+  fonts
 );
 
 //! MODE DEVELOP STAR
@@ -181,6 +161,11 @@ function styleVendorsDev() {
 
 function jsDev() {
   return src(["#src/js/**/*.js", "!#src/js/vendors/**/*.js"])
+    .pipe(
+      babel({
+        presets: ["@babel/preset-env"],
+      })
+    )
     .pipe(concat("main.js"))
     .pipe(dest("dev/js"))
     .pipe(browserSync.stream());
@@ -209,21 +194,24 @@ function otf2ttfDev() {
     .pipe(dest("#src/fonts"));
 }
 
+function ttf2woffDev() {
+  return src(["#src/fonts/**/*.ttf"]).pipe(ttf2woff()).pipe(dest("dev/fonts"));
+}
+
 function ttf2woff2Dev() {
-  return src(["#src/fonts/**/*", "!#src/fonts/**/*.otf"])
-    .pipe(ttf2woff2())
-    .pipe(dest("dev/fonts"));
+  return src(["#src/fonts/**/*.ttf"]).pipe(ttf2woff2()).pipe(dest("dev/fonts"));
+}
+
+function ttf2eotDev() {
+  return src(["#src/fonts/**/*.ttf"]).pipe(ttf2eot()).pipe(dest("dev/fonts"));
 }
 
 function fontsDev() {
-  return src(["#src/fonts/**/*"])
-    .pipe(dest("dev/fonts"));
+  return src(["#src/fonts/**/*.ttf"]).pipe(dest("dev/fonts"));
 }
 
 function cleanDev() {
-  return del([
-    "dev/**/*"
-  ]);
+  return del(["dev/**/*"]);
 }
 
 function watchDev() {
@@ -241,7 +229,9 @@ exports.jsDev = jsDev;
 exports.jsVendorsDev = jsVendorsDev;
 exports.imagesDev = imagesDev;
 exports.otf2ttfDev = otf2ttfDev;
+exports.ttf2woffDev = ttf2woffDev;
 exports.ttf2woff2Dev = ttf2woff2Dev;
+exports.ttf2eotDev = ttf2eotDev;
 exports.fontsDev = fontsDev;
 exports.cleanDev = cleanDev;
 exports.browsersyncDev = browsersyncDev;
@@ -255,8 +245,11 @@ exports.dev = parallel(
   jsDev,
   jsVendorsDev,
   imagesDev,
+  //otf2ttfDev,
+  ttf2woffDev,
   ttf2woff2Dev,
-  fontsDev,
+  //ttf2eotDev,
+  //fontsDev,
   browsersyncDev,
   watchDev
 );

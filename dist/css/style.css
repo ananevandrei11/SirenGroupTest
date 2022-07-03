@@ -1,0 +1,485 @@
+@font-face {
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-family: "Montserrat-Medium";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-family: "Montserrat-SemiBold";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-family: "Montserrat-Bold";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body,
+.page {
+  height: 100%;
+  overflow-y: auto;
+  word-break: break-word;
+}
+
+.page * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.linkLogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 168px;
+  height: 56px;
+}
+
+@media screen and (max-width: 767px) {
+  .linkLogo {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+.linkLogo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-family: "Montserrat-Bold", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 27px;
+  line-height: 1.33;
+}
+
+@media screen and (max-width: 1440px) {
+  .title {
+    font-size: calc( 20px + 7 * ((100vw - 375px) / 1065));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .title {
+    line-height: 1.3;
+  }
+}
+
+.text {
+  font-family: "Montserrat-Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: 1.44;
+}
+
+@media screen and (max-width: 1440px) {
+  .text {
+    font-size: calc( 16px + 2 * ((100vw - 375px) / 1065));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .text {
+    line-height: 1.5;
+  }
+}
+
+.textList {
+  font-family: "Montserrat-Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 21px;
+  line-height: 1.28;
+}
+
+@media screen and (max-width: 1440px) {
+  .textList {
+    font-size: calc( 16px + 5 * ((100vw - 375px) / 1065));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .textList {
+    line-height: 1.3125;
+  }
+}
+
+.header {
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+.hero {
+  padding: 50px 0 60px 0;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    padding: 25px 0 35px 0;
+  }
+}
+
+.hero__title {
+  margin-bottom: 50px;
+  font-family: "Montserrat-SemiBold", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 45px;
+  line-height: 1.33;
+  color: #000000;
+}
+
+@media screen and (max-width: 1440px) {
+  .hero__title {
+    font-size: calc( 22px + 23 * ((100vw - 375px) / 1065));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero__title {
+    margin-bottom: 25px;
+    line-height: 1.18;
+  }
+}
+
+.hero__title strong {
+  font-family: "Montserrat-Bold", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #0c8543;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero__list {
+  margin: -10px;
+}
+
+@media screen and (max-width: 767px) {
+  .hero__list {
+    margin: -4px;
+  }
+}
+
+.hero__item {
+  padding: 10px !important;
+}
+
+@media screen and (max-width: 767px) {
+  .hero__item {
+    padding: 4px !important;
+  }
+}
+
+.heroItem__wrapper {
+  padding: 30px 18px;
+  background-color: #f3f9f6;
+}
+
+@media screen and (max-width: 767px) {
+  .heroItem__wrapper {
+    padding: 20px 16px;
+  }
+}
+
+.heroItem__icon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .heroItem__icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.heroItem__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.heroItem__text {
+  color: #000000;
+}
+
+.features {
+  padding: 60px 0;
+  background-color: #f3f9f6;
+}
+
+@media screen and (max-width: 767px) {
+  .features {
+    padding: 35px 0;
+  }
+}
+
+.features__card {
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .features__card {
+    margin-bottom: 30px;
+  }
+}
+
+.features__card:nth-of-type(even) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.features__card:last-of-type {
+  margin-bottom: 0;
+}
+
+.featuresCard__picture_first {
+  position: relative;
+}
+
+.featuresCard__picture_first::after {
+  position: absolute;
+  content: "";
+  top: -20px;
+  right: -20px;
+  width: 240px;
+  height: 86px;
+  background: url(../img/micron.png) center/contain no-repeat;
+}
+
+@media screen and (max-width: 767px) {
+  .featuresCard__picture_first::after {
+    top: 10px;
+    right: 25.5px;
+    width: 200px;
+    height: 72px;
+  }
+}
+
+.featuresCard__img {
+  height: 300px;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media screen and (max-width: 767px) {
+  .featuresCard__img {
+    height: 196px;
+  }
+}
+
+.featuresCard__title {
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.featuresCard__text {
+  color: #000000;
+}
+
+.about {
+  padding: 60px 0 48px 0;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 767px) {
+  .about {
+    padding: 35px 0;
+  }
+}
+
+.about__title {
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.about__text {
+  margin-bottom: 25px;
+  color: #000000;
+}
+
+.about__list {
+  margin: -15px 0;
+}
+
+.about__card {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.aboutCard__wrapper {
+  border-radius: 8px;
+  background-color: #0c8543;
+}
+
+.aboutCard__img {
+  height: 126px;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.aboutCard__text {
+  padding: 15px;
+  color: #ffffff;
+}
+
+.warranty {
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .warranty {
+    padding: 35px 0;
+    background-color: #f6f6f6;
+  }
+}
+
+.warranty::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  background-color: #f6f6f6;
+  z-index: -1;
+}
+
+@media screen and (max-width: 767px) {
+  .warranty::before {
+    opacity: 0;
+  }
+}
+
+.warranty__picture {
+  width: 255px;
+  height: 240px;
+}
+
+@media screen and (max-width: 767px) {
+  .warranty__picture {
+    width: 170px;
+    height: 160px;
+  }
+}
+
+.warranty__img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.warranty__title {
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.warranty__title strong {
+  font-weight: 700;
+  color: #0c8543;
+}
+
+.warranty__text {
+  margin-bottom: 0;
+  color: #000000;
+}
+
+.addInfo {
+  padding: 48px 0 60px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .addInfo {
+    padding: 35px 0;
+  }
+}
+
+.addInfo__text {
+  color: #000000;
+}
+
+.footer {
+  padding: 25px 0;
+  background-color: #0c8543;
+}
+
+@media screen and (max-width: 991px) {
+  .footer__logoLink {
+    margin-bottom: 25px;
+  }
+}
+
+.footer__listLink {
+  margin-top: -7.5px;
+  margin-bottom: -7.5px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media screen and (max-width: 991px) {
+  .footer__listLink {
+    width: 100%;
+  }
+}
+
+.footer__itemLink {
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+}
+
+.footer__link {
+  font-family: "Montserrat-Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@media (hover: hover) {
+  .footer__link:hover {
+    opacity: .75;
+    color: #ffffff;
+  }
+}
+
+@media (hover: none) {
+  .footer__link:active {
+    opacity: .75;
+    color: #ffffff;
+  }
+}
+
+.footer__copyText {
+  font-family: "Montserrat-Medium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 991px) {
+  .footer__copyText {
+    margin-top: 25px;
+  }
+}
