@@ -4,7 +4,8 @@
 * Tools: Gulp 4
 
 ## a. The finished result by the link:
-	<https://ananevandrei11.github.io/SirenGroupTest/>
+
+### https://ananevandrei11.github.io/SirenGroupTest/
 
 ## b. Install and use project:
 1. Install node modules
