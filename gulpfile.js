@@ -27,11 +27,11 @@ const fonter = require("gulp-fonter");
 
 //! MODE PRODUCTION START
 function html() {
-  return src("dev/*.html").pipe(dest("dist"));
+  return src("dev/*.html").pipe(dest("docs"));
 }
 
 function style() {
-  return src("dev/css/style.css").pipe(dest("dist/css"));
+  return src("dev/css/style.css").pipe(dest("docs/css"));
 }
 
 function styleMin() {
@@ -45,16 +45,16 @@ function styleMin() {
       })
     )
     .pipe(sourcemaps.write())
-    .pipe(dest("dist/css"));
+    .pipe(dest("docs/css"));
 }
 
 function styleVendors() {
-  return src(["dev/css/vendors/**/*.css"]).pipe(dest("dist/css/vendors/"));
+  return src(["dev/css/vendors/**/*.css"]).pipe(dest("docs/css/vendors/"));
 }
 
 function js() {
   return src(["#src/js/**/*.js", "!#src/js/vendors/**/*.js"]).pipe(
-    dest("dist/js")
+    dest("docs/js")
   );
 }
 
@@ -68,11 +68,11 @@ function jsMin() {
       })
     )
     .pipe(sourcemaps.write())
-    .pipe(dest("dist/js"));
+    .pipe(dest("docs/js"));
 }
 
 function jsVendors() {
-  return src(["dev/js/vendors/**/*.js"]).pipe(dest("dist/js/vendors/"));
+  return src(["dev/js/vendors/**/*.js"]).pipe(dest("docs/js/vendors/"));
 }
 
 function images() {
@@ -87,15 +87,15 @@ function images() {
         }),
       ])
     )
-    .pipe(dest("dist/img"));
+    .pipe(dest("docs/img"));
 }
 
 function fonts() {
-  return src("dev/fonts/**/*").pipe(dest("dist/fonts"));
+  return src("dev/fonts/**/*").pipe(dest("docs/fonts"));
 }
 
 function cleanDist() {
-  return del("dist/**/*");
+  return del("docs/**/*");
 }
 
 exports.html = html;
